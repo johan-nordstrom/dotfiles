@@ -5,7 +5,6 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'shawncplus/phpcomplete.vim'
 Plugin 'docteurklein/php-getter-setter.vim'
-Plugin 'Lokaltog/vim-powerline'
 Plugin 'othree/html5.vim'
 Plugin 'gmarik/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
@@ -27,6 +26,8 @@ Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
 Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'digitaltoad/vim-jade'
+Plugin 'erikw/tmux-powerline'
+Plugin 'vim-airline/vim-airline-themes'
 call vundle#end()
 
 filetype plugin indent on
@@ -49,4 +50,5 @@ map <C-n> :NERDTreeToggle<CR>
 nnoremap K  :tabnext<CR>
 nnoremap J  :tabprev<CR>
 
-"autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+let g:airline_powerline_fonts = 1 
