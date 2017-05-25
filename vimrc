@@ -37,6 +37,7 @@ Plugin 'sickill/vim-monokai'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'dunckr/vim-monokai-soda'
 Plugin 'fholgado/minibufexpl.vim'
+Plugin 'tpope/vim-fugitive'
 call vundle#end()
 
 let g:gruvbox_italic=1
@@ -50,6 +51,25 @@ set sw=4
 set ts=4
 set sts=4
 set t_Co=256
+set shell=/bin/zsh      " set default shell
+set nofoldenable        " dont autofold
+"set foldmethod=indent   " marks foldstarts/ends with {{{ }}}
+set foldmethod=syntax
+set foldlevel=1
+set autoindent
+set foldnestmax=10
+set tabstop=2           " a n-space tab width
+set shiftwidth=2        " allows the use of < and > for VISUAL indenting
+set softtabstop=2       " counts n spaces when DELETE or BCKSPCE is used
+set nobackup            " dont keep backups after close
+set writebackup         " do keep one while working
+set backupdir=$HOME/.vim/backup/,/tmp
+set backupcopy=yes
+set directory=$HOME/.vim/backup/,/tmp
+set noswapfile          " disable swapfiles
+" Change leader
+let mapleader=','
+
 syntax on
 
 "autocmd vimenter * NERDTree
@@ -67,6 +87,9 @@ nnoremap L  :bprev<CR>
 let g:airline_powerline_fonts = 1 
 let g:airline_theme = 'zenburn'
 let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tmuxline#enabled = 0
+let g:airline#extensions#tmuxline#enabled = 1
 let g:tmuxline_preset = 'default'
 let g:neocomplete#enable_at_startup = 1
+let g:gruvbox_contrast_dark = "hard"
+" Airline
+"autocmd VimEnter * call AirlineInit()
