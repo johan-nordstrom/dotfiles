@@ -51,7 +51,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git vi-mode gulp fedora cakephp3 gitignore npm sudo web-search docker)
+plugins=(git vi-mode gulp fedora cakephp3 gitignore npm sudo web-search docker ng)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -83,3 +83,4 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+source "$HOME/.vim/bundle/gruvbox/gruvbox_256palette.sh"

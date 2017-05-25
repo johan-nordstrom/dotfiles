@@ -4,18 +4,15 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'shawncplus/phpcomplete.vim'
-Plugin 'docteurklein/php-getter-setter.vim'
 Plugin 'othree/html5.vim'
 Plugin 'gmarik/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/nerdcommenter'
 Plugin 'pangloss/vim-javascript'
 Plugin 'myusuf3/numbers.vim'
 Plugin 'Shougo/neocomplcache.vim'
 Plugin 'wincent/command-t'
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/syntastic'
-Plugin 'bling/vim-airline'
 Plugin 'jeetsukumaran/vim-buffergator'
 Plugin 'burnettk/vim-angular'
 Plugin 'othree/javascript-libraries-syntax.vim'
@@ -26,19 +23,33 @@ Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
 Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'digitaltoad/vim-jade'
-Plugin 'erikw/tmux-powerline'
+Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+Plugin 'jacoborus/tender.vim'
+Plugin 'nanotech/jellybeans.vim'
+Plugin 'edkolev/tmuxline.vim'
+Plugin 'morhetz/gruvbox'
+Plugin 'jwalton512/vim-blade'
+Plugin 'noahfrederick/vim-laravel'
+Plugin 'posva/vim-vue'
+Plugin 'leafgarland/typescript-vim'
+Plugin 'sickill/vim-monokai'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'dunckr/vim-monokai-soda'
+Plugin 'fholgado/minibufexpl.vim'
 call vundle#end()
 
+let g:gruvbox_italic=1
 filetype plugin indent on
-
-colors mango
+set background=dark
+colors zenburn
 set nu " linenumbers
 set nocompatible   
 set expandtab
 set sw=4 
 set ts=4
 set sts=4
+set t_Co=256
 syntax on
 
 "autocmd vimenter * NERDTree
@@ -49,6 +60,13 @@ map <C-n> :NERDTreeToggle<CR>
 
 nnoremap K  :tabnext<CR>
 nnoremap J  :tabprev<CR>
+nnoremap H  :bnext<CR>
+nnoremap L  :bprev<CR>
 
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+"autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 let g:airline_powerline_fonts = 1 
+let g:airline_theme = 'zenburn'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tmuxline#enabled = 0
+let g:tmuxline_preset = 'default'
+let g:neocomplete#enable_at_startup = 1
