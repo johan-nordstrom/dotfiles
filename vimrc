@@ -43,24 +43,21 @@ call vundle#end()
 let g:gruvbox_italic=1
 filetype plugin indent on
 set background=dark
-colors zenburn
+"colors smyck
+colors gruvbox
 set nu " linenumbers
 set nocompatible   
 set expandtab
-set sw=4 
-set ts=4
-set sts=4
 set t_Co=256
 set shell=/bin/zsh      " set default shell
 set nofoldenable        " dont autofold
-"set foldmethod=indent   " marks foldstarts/ends with {{{ }}}
 set foldmethod=syntax
 set foldlevel=1
 set autoindent
 set foldnestmax=10
-set tabstop=2           " a n-space tab width
-set shiftwidth=2        " allows the use of < and > for VISUAL indenting
-set softtabstop=2       " counts n spaces when DELETE or BCKSPCE is used
+set tabstop=4           " a n-space tab width
+set shiftwidth=4        " allows the use of < and > for VISUAL indenting
+set softtabstop=4       " counts n spaces when DELETE or BCKSPCE is used
 set nobackup            " dont keep backups after close
 set writebackup         " do keep one while working
 set backupdir=$HOME/.vim/backup/,/tmp
@@ -83,12 +80,11 @@ nnoremap J  :tabprev<CR>
 nnoremap H  :bnext<CR>
 nnoremap L  :bprev<CR>
 
-"autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 let g:airline_powerline_fonts = 1 
-let g:airline_theme = 'zenburn'
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tmuxline#enabled = 1
-let g:tmuxline_preset = 'default'
+let g:airline_theme = 'gruvbox'
+"let g:airline#extensions#tabline#enabled = 0
+"let g:airline#extensions#tmuxline#enabled = 1
+"let g:tmuxline_preset = 'default'
 let g:neocomplete#enable_at_startup = 1
 let g:gruvbox_contrast_dark = "hard"
 " Airline
