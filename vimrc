@@ -3,6 +3,7 @@ filetype off
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
+Plugin 'erikw/tmux-powerline'
 Plugin 'shawncplus/phpcomplete.vim'
 Plugin 'othree/html5.vim'
 Plugin 'gmarik/Vundle.vim'
@@ -27,7 +28,6 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'jacoborus/tender.vim'
 Plugin 'nanotech/jellybeans.vim'
-"Plugin 'edkolev/tmuxline.vim'
 Plugin 'morhetz/gruvbox'
 Plugin 'jwalton512/vim-blade'
 Plugin 'noahfrederick/vim-laravel'
@@ -38,13 +38,13 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'dunckr/vim-monokai-soda'
 Plugin 'fholgado/minibufexpl.vim'
 Plugin 'tpope/vim-fugitive'
+Plugin 'edkolev/tmuxline.vim'
 call vundle#end()
 
-let g:gruvbox_italic=1
 filetype plugin indent on
 set background=dark
-"colors smyck
 colors gruvbox
+
 set nu " linenumbers
 set nocompatible   
 set expandtab
@@ -66,19 +66,17 @@ set directory=$HOME/.vim/backup/,/tmp
 set noswapfile          " disable swapfiles
 " Change leader
 let mapleader=','
-
 syntax on
 
-"autocmd vimenter * NERDTree
-"autocmd StdinReadPre * let s:std_in=1
-"autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 map <C-n> :NERDTreeToggle<CR>
-
-
 nnoremap K  :tabnext<CR>
 nnoremap J  :tabprev<CR>
 nnoremap H  :bnext<CR>
 nnoremap L  :bprev<CR>
+nmap <silent> <A-Up> :wincmd k<CR>
+nmap <silent> <A-Down> :wincmd j<CR>
+nmap <silent> <A-Left> :wincmd h<CR>
+nmap <silent> <A-Right> :wincmd l<CR>
 
 let g:airline_powerline_fonts = 1 
 let g:airline_theme = 'gruvbox'
@@ -87,5 +85,6 @@ let g:airline_theme = 'gruvbox'
 "let g:tmuxline_preset = 'default'
 let g:neocomplete#enable_at_startup = 1
 let g:gruvbox_contrast_dark = "hard"
+let g:gruvbox_italic=1
 " Airline
-"autocmd VimEnter * call AirlineInit()
+"automd VimEnter * call AirlineInit()
