@@ -85,3 +85,4 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 source "$HOME/.vim/bundle/gruvbox/gruvbox_256palette.sh"
 alias tmux='tmux -2'
+alias cdnf='cd ~/git/new_frontend'
