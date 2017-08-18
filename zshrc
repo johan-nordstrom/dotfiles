@@ -7,7 +7,7 @@ export ZSH=/home/j.nordstrom/.oh-my-zsh
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+ZSH_THEME="kphoen"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -51,7 +51,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git vi-mode gulp fedora cakephp3 gitignore npm sudo web-search docker ng)
+plugins=(git vi-mode gitignore npm sudo web-search docker git-flow git-extras gitfast github jira jsontools httpie tmux geeknote composer)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -85,4 +85,5 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 source "$HOME/.vim/bundle/gruvbox/gruvbox_256palette.sh"
 alias tmux='tmux -2'
-alias cdf='cd ~/git/frontend'
+alias cdf='cd /var/www/html/local'
+alias vim='nvim'
