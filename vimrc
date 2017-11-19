@@ -1,42 +1,56 @@
+if &compatible
+  set nocompatible
+endif
+set runtimepath+=~/.vim/dein/repos/github.com/Shougo/dein.vim
+
+call dein#begin('~/.vim/dein')
+
+call dein#add('Shougo/dein.vim')
+call dein#add('Shougo/neocomplete.vim')
+call dein#add('Valloric/MatchTagAlways')
+call dein#add('sheerun/vim-polyglot')
+call dein#add('w0rp/ale')
+call dein#add('erikw/tmux-powerline')
+call dein#add('Valloric/YouCompleteMe')
+call dein#add('othree/html5.vim')
+call dein#add('ryym/vim-riot')
+call dein#add('gmarik/Vundle.vim')
+call dein#add('scrooloose/nerdtree')
+call dein#add('pangloss/vim-javascript')
+call dein#add('wincent/command-t')
+call dein#add('kien/ctrlp.vim')
+call dein#add('Lokaltog/vim-easymotion')
+call dein#add('digitaltoad/vim-jade')
+call dein#add('vim-airline/vim-airline')
+call dein#add('vim-airline/vim-airline-themes')
+call dein#add('jacoborus/tender.vim')
+call dein#add('nanotech/jellybeans.vim')
+call dein#add('morhetz/gruvbox')
+call dein#add('noahfrederick/vim-laravel')
+call dein#add('leafgarland/typescript-vim')
+call dein#add('sickill/vim-monokai')
+call dein#add('scrooloose/nerdcommenter')
+call dein#add('dunckr/vim-monokai-soda')
+call dein#add('fholgado/minibufexpl.vim')
+call dein#add('tpope/vim-fugitive')
+call dein#add('edkolev/tmuxline.vim')
+call dein#add('maksimr/vim-jsbeautify') 
+
+call dein#end()
+call dein#save_state()
+
 set nocompatible
-filetype off
+"filetype off
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'Valloric/MatchTagAlways'
-Plugin 'sheerun/vim-polyglot'
-Plugin 'w0rp/ale'
-Plugin 'erikw/tmux-powerline'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'othree/html5.vim'
-Plugin 'ryym/vim-riot'
-Plugin 'gmarik/Vundle.vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'pangloss/vim-javascript'
-Plugin 'wincent/command-t'
-Plugin 'kien/ctrlp.vim'
-Plugin 'Lokaltog/vim-easymotion'
-Plugin 'digitaltoad/vim-jade'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'jacoborus/tender.vim'
-Plugin 'nanotech/jellybeans.vim'
-Plugin 'morhetz/gruvbox'
-Plugin 'noahfrederick/vim-laravel'
-Plugin 'leafgarland/typescript-vim'
-Plugin 'sickill/vim-monokai'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'dunckr/vim-monokai-soda'
-Plugin 'fholgado/minibufexpl.vim'
-Plugin 'tpope/vim-fugitive'
-Plugin 'edkolev/tmuxline.vim'
-Plugin 'maksimr/vim-jsbeautify'
-"Plugin 'xolox/vim-session'
-call vundle#end()
+"set rtp+=~/.vim/bundle/Vundle.vim
+"call vundle#begin()
+""Plugin 'xolox/vim-session'
+"call vundle#end()
 
+syntax enable
 filetype plugin indent on
 set background=dark
-colors monokai
+colors gruvbox
 
 set nu " linenumbers
 set nocompatible   
@@ -61,7 +75,6 @@ set directory=$HOME/.vim/backup/,/tmp
 set noswapfile          " disable swapfiles
 " Change leader
 let mapleader=','
-syntax on
 
 map <C-n> :NERDTreeToggle<CR>
 nnoremap K  :tabnext<CR>
