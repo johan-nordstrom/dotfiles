@@ -3,6 +3,7 @@ filetype off
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
+Plugin 'Valloric/MatchTagAlways'
 Plugin 'sheerun/vim-polyglot'
 Plugin 'w0rp/ale'
 Plugin 'erikw/tmux-powerline'
@@ -35,7 +36,7 @@ call vundle#end()
 
 filetype plugin indent on
 set background=dark
-colors gruvbox
+colors monokai
 
 set nu " linenumbers
 set nocompatible   
@@ -49,9 +50,9 @@ set autoindent
 set foldnestmax=10
 set termguicolors
 
-set tabstop=4           " a n-space tab width
-set shiftwidth=4        " allows the use of < and > for VISUAL indenting
-set softtabstop=4       " counts n spaces when DELETE or BCKSPCE is used
+set tabstop=2           " a n-space tab width
+set shiftwidth=2       " allows the use of < and > for VISUAL indenting
+set softtabstop=2       " counts n spaces when DELETE or BCKSPCE is used
 set nobackup            " dont keep backups after close
 set writebackup         " do keep one while working
 set backupdir=$HOME/.vim/backup/,/tmp
@@ -73,7 +74,7 @@ nmap <silent> <A-Left> :wincmd h<CR>
 nmap <silent> <A-Right> :wincmd l<CR>
 
 let g:airline_powerline_fonts = 1 
-let g:airline_theme='gruvbox'
+let g:airline_theme='base16_default'
 
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tmuxline#enabled = 1
