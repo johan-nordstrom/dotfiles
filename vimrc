@@ -8,7 +8,10 @@ call dein#add('Shougo/dein.vim')
 call dein#add('gorodinskiy/vim-coloresque')
 call dein#add('Valloric/MatchTagAlways')
 call dein#add('sheerun/vim-polyglot')
+
+" Tmux
 call dein#add('erikw/tmux-powerline')
+
 call dein#add('Valloric/YouCompleteMe')
 call dein#add('othree/html5.vim')
 call dein#add('scrooloose/nerdtree')
@@ -56,9 +59,6 @@ set t_Co=256
 set shell=/bin/zsh      " set default shell
 
 set autoindent
-"set foldnestmax=10
-"set foldmethod=marker
-"set foldlevel=1
 
 set expandtab
 set tabstop=2           " a n-space tab width
@@ -104,15 +104,19 @@ autocmd FileType javascript noremap <buffer>  <c-f> :call JsBeautify()<cr>
 " for json
 autocmd FileType json noremap <buffer> <c-f> :call JsonBeautify()<cr>
 " for jsx
-autocmd FileType jsx noremap <buffer> <c-f> :call JsxBeautify()<cr>
+autocmd FileType js noremap <buffer> <c-f> :call JsBeautify()<cr>
 " for html
 autocmd FileType html noremap <buffer> <c-f> :call HtmlBeautify()<cr>
 " for css or scss
 autocmd FileType css noremap <buffer> <c-f> :call CSSBeautify()<cr>
+" for css or scss
+autocmd FileType scss noremap <buffer> <c-f> :call CSSBeautify()<cr>
+" for css or scss
+autocmd FileType sass noremap <buffer> <c-f> :call CSSBeautify()<cr>
 let g:Powerline_symbols = 'unicode'
 
-au Filetype html,xml,xsl source ~/.vim/scripts/closetag.vim
- set noignorecase 
+"au Filetype html,xml,xsl source ~/.vim/scripts/closetag.vim
+"set noignorecase 
 
 " SYNTASTIC CONFIG 
 set statusline+=%#warningmsg#
