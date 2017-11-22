@@ -11,6 +11,7 @@ call dein#add('sheerun/vim-polyglot')
 
 " Tmux
 call dein#add('erikw/tmux-powerline')
+call dein#add('Raimondi/delimitMate')
 
 call dein#add('Valloric/YouCompleteMe')
 call dein#add('othree/html5.vim')
@@ -84,10 +85,10 @@ nmap <silent> <A-Left> :wincmd h<CR>
 nmap <silent> <A-Right> :wincmd l<CR>
 map <C-n> :NERDTreeToggle<CR>
 
-let g:airline_powerline_fonts = 1 
+"let g:airline_powerline_fonts = 1 
 let g:airline_theme='gruvbox'
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tmuxline#enabled = 0
+"let g:airline#extensions#tabline#enabled = 1
+"let g:airline#extensions#tmuxline#enabled = 0
 
 let g:gruvbox_contrast_dark='hard'
 let g:gruvbox_contrast_light='hard'
@@ -113,7 +114,7 @@ autocmd FileType css noremap <buffer> <c-f> :call CSSBeautify()<cr>
 autocmd FileType scss noremap <buffer> <c-f> :call CSSBeautify()<cr>
 " for css or scss
 autocmd FileType sass noremap <buffer> <c-f> :call CSSBeautify()<cr>
-let g:Powerline_symbols = 'unicode'
+"let g:Powerline_symbols = 'unicode'
 
 "au Filetype html,xml,xsl source ~/.vim/scripts/closetag.vim
 "set noignorecase 
