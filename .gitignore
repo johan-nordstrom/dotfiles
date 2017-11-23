@@ -2,3 +2,7 @@ vim/dein
 vim/dein/**
 */vim/dein/**
 ./vim/dein
+cache
+**/cache/*
+**/cache/**
+cache/**
