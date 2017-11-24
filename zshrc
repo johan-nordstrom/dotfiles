@@ -2,12 +2,19 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH=/home/j.nordstrom/.oh-my-zsh
+export ZSH=/Users/johan/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="kphoen"
+ZSH_THEME="agnoster"
+
+# Set list of themes to load
+# Setting this variable when ZSH_THEME=random
+# cause zsh load theme from this variable instead of
+# looking in ~/.oh-my-zsh/themes/
+# An empty array have no effect
+# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -51,7 +58,22 @@ ZSH_THEME="kphoen"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git vi-mode gitignore npm sudo web-search docker git-flow git-extras gitfast github jira jsontools httpie tmux geeknote composer)
+plugins=(
+  git,
+  vi-mode,
+  tmux,
+  web-search,
+  sudo,
+  rsync,
+  osx,
+  ng,
+  jsontools,
+  grunt,
+  httpie,
+  colorize,
+  cask,
+  brew
+)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -83,7 +105,7 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-source "$HOME/.vim/bundle/gruvbox/gruvbox_256palette.sh"
-alias tmux='tmux -2'
-alias cdf='cd /var/www/html/local'
 alias vim='nvim'
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+source ~/.zsh/gruvbox_256palette_osx.sh
