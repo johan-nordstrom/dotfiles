@@ -45,7 +45,8 @@ call dein#add('scrooloose/nerdtree')
 call dein#add('scrooloose/nerdcommenter')
 call dein#add('tpope/vim-fugitive')
 call dein#add('maksimr/vim-jsbeautify')
-call dein#add('vim-syntastic/syntastic')
+"call dein#add('vim-syntastic/syntastic')
+call dein#add('w0rp/ale')
 call dein#add('mattn/emmet-vim')
 "call dein#add('docunext/closetag.vim')
 call dein#add('gregsexton/matchtag')
@@ -173,13 +174,13 @@ autocmd FileType scss noremap <buffer><c-f>: call CSSBeautify() <cr>
 autocmd FileType sass noremap <buffer><c-f>: call CSSBeautify() <cr>
 
 " SYNTASTIC CONFIG 
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%* 
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%* 
 "let g:syntastic_always_populate_loc_list=1
 "let g:syntastic_auto_loc_list=1
-let g:syntastic_check_on_open=1
-let g:syntastic_check_on_wq=0
+"let g:syntastic_check_on_open=1
+"let g:syntastic_check_on_wq=0
 
 " FZF
 "let g:fzf_nvim_statusline=0 " disable statusline overwriting
@@ -210,7 +211,7 @@ nnoremap <C-F> :Ag
 "command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
 "nnoremap <C-F> :Find<CR>
 let g:rooter_patterns = ['Rakefile', '.git/', 'bower.json']
-let g:fzf_layout = { 'down': '~40%' }
+let g:fzf_layout = { 'down': '~20%' }
 
 " In Neovim, you can set up fzf window using a Vim command
 "let g:fzf_layout = { 'window': 'enew' }
@@ -236,3 +237,5 @@ let g:fzf_colors =
   \ 'spinner': ['fg', 'Label'],
   \ 'header':  ['fg', 'Comment'] }
 
+"Set this. Airline will handle the rest.
+let g:airline#extensions#ale#enabled = 1
