@@ -9,6 +9,7 @@ set runtimepath+=$HOME/.vim/dein/repos/github.com/Shougo/dein.vim
 call dein#begin('$HOME/.vim/dein')
 call dein#add('Shougo/dein.vim')
 
+call dein#add('edkolev/tmuxline.vim')
 call dein#add('scrooloose/nerdcommenter')
 " Find/Search
 call dein#add('rking/ag.vim')
@@ -19,6 +20,9 @@ call dein#add('Valloric/MatchTagAlways')
 call dein#add('Shougo/vimproc.vim', {'build': 'make'})
 call dein#add('Raimondi/delimitMate')
 call dein#add('Valloric/YouCompleteMe',  { 'build': 'sh install.sh' })
+
+" Devicons
+call dein#add('ryanoasis/vim-devicons')
 
 
 " Airline
@@ -128,15 +132,23 @@ set laststatus=2
 let mapleader=',' " Change leader
 " turn off search highlight
 nnoremap <leader><space> :nohlsearch<CR>
-"nnoremap K: tabnext < CR >
-"   nnoremap J: tabprev < CR >
+nnoremap K: tabnext<CR>
+nnoremap J: tabprev<CR>
+map <C-n> :NERDTreeToggle<CR>
 "   nnoremap H: bnext < CR >
 "   nnoremap L: bprev < CR >
 "   nmap < silent > < A - Up >: wincmd k < CR >
 "   nmap < silent > < A - Down >: wincmd j < CR >
 "   nmap < silent > < A - Left >: wincmd h < CR >
 "   nmap < silent > < A - Right >: wincmd l < CR >
-"   map < S - n >: NERDTreeToggle < CR >
+let g:webdevicons_enable = 1
+" adding to vim-airline's tabline 
+let g:webdevicons_enable_airline_tabline = 1
+" adding the flags to NERDTree 
+let g:webdevicons_enable_nerdtree = 1
+" loading the plugin 
+" adding to vim-airline's statusline 
+let g:webdevicons_enable_airline_statusline = 1
 
 
 " Gruvbox
@@ -239,3 +251,7 @@ let g:fzf_colors =
 
 "Set this. Airline will handle the rest.
 let g:airline#extensions#ale#enabled = 1
+set encoding=utf-8
+set termencoding=utf-8
+let g:WebDevIconsOS = 'Darwin'
+"let g:airline#extensions#tmuxline#enabled = 0
