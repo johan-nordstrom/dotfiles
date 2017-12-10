@@ -8,9 +8,16 @@ set runtimepath+=$HOME/.vim/dein/repos/github.com/Shougo/dein.vim
 
 call dein#begin('$HOME/.vim/dein')
 call dein#add('Shougo/dein.vim')
+call dein#add('adelarsq/vim-matchit')
 
-call dein#add('edkolev/tmuxline.vim')
+
+call dein#add('majutsushi/tagbar')
+" Tmux
+call dein#add('tmux-plugins/vim-tmux')
+call dein#add('erikw/tmux-powerline')
+
 call dein#add('scrooloose/nerdcommenter')
+
 " Find/Search
 call dein#add('rking/ag.vim')
 call dein#add('airblade/vim-rooter')
@@ -37,8 +44,8 @@ call dein#add('sheerun/vim-polyglot')
 call dein#add('burnettk/vim-angular')
 
 "Fzf
-call dein#add('junegunn/fzf',{ 'path': '~/.fzf', 'build': './install --all' })
-call dein#add('junegunn/fzf.vim')
+call dein#add('junegunn/fzf',{ 'merged': 0, 'build': './install --all' })
+call dein#add('junegunn/fzf.vim', { 'depends' : 'fzf'})
 call dein#add('nicodebo/base16-fzf')
 
 "CtrlP
@@ -94,6 +101,7 @@ set shell=/bin/zsh
 set autoindent
 set expandtab
 set tabstop=2 " a n-space tab width
+set smarttab
 set shiftwidth=2 " allows the use of < and > for VISUAL indenting
 set softtabstop=2 " counts n spaces when DELETE or BCKSPCE is used
 set nobackup " dont keep backups after close
@@ -173,8 +181,6 @@ if executable('ag')
   let g:ctrlp_use_caching = 0
 endif
 
-" bind K to grep word under cursor
-nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 " JSBEAUTIFY CONFIG 
 map <C-F>: call JsBeautify()<CR>
 autocmd FileType javascript noremap <buffer><c-f>: call JsBeautify() <cr>
@@ -212,7 +218,6 @@ let g:neomru#file_mru_path = $HOME.'/.nvim/cache/neomru/file'
 let g:neomru#directory_mru_path = $HOME.'/.nvim/cache/neomru/directory'
 let delimitMate_expand_cr=1
 let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tmuxline = 1
 let g:airline_powerline_fonts = 1 
 let g:airline_theme='gruvbox'
 let g:airline#extensions#tabline#buffer_nr_show = 1
@@ -254,4 +259,5 @@ let g:airline#extensions#ale#enabled = 1
 set encoding=utf-8
 set termencoding=utf-8
 let g:WebDevIconsOS = 'Darwin'
-"let g:airline#extensions#tmuxline#enabled = 0
+let g:airline#extensions#tmuxline = 1
+""let g:airline#extensions#tmuxline#enabled = 0
