@@ -113,3 +113,13 @@ source ~/.zsh/gruvbox_256palette_osx.sh
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 alias v='NVIM_TUI_ENABLE_TRUE_COLOR=1 nvim'
 alias vim='NVIM_TUI_ENABLE_TRUE_COLOR=1 nvim'
+alias cw="cd ~/git/casinowilds"
+alias cdcj="cd ~/git/locojoker"
+alias cj="cd ~/git/locojoker"
+alias cwr="cd ~/git/winnerResort"
+export HOMEBREW_CASK_OPTS="--appdir=~/Applications --fontdir=/Library/Fonts"
+alias chromekiller="pkill Google Chrome"
+alias dangerchrome="open -a 'Google Chrome.app' --args --disable-web-security --allow-running-insecure-content --user-data-dir=''"
+
+# Specify your defaults in this environment variable
+export HOMEBREW_CASK_OPTS="--appdir=/Applications --fontdir=/Library/Fonts"

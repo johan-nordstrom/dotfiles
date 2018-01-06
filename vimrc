@@ -9,7 +9,9 @@ set runtimepath+=$HOME/.vim/dein/repos/github.com/Shougo/dein.vim
 call dein#begin('$HOME/.vim/dein')
 call dein#add('Shougo/dein.vim')
 call dein#add('adelarsq/vim-matchit')
+call dein#add('digitaltoad/vim-pug')
 
+"call dein#add('jremmen/vim-ripgrep')
 
 call dein#add('majutsushi/tagbar')
 " Tmux
@@ -261,3 +263,16 @@ set termencoding=utf-8
 let g:WebDevIconsOS = 'Darwin'
 let g:airline#extensions#tmuxline = 1
 ""let g:airline#extensions#tmuxline#enabled = 0
+".vimrc
+map <c-f> :call JsBeautify()<cr>
+" or
+autocmd FileType javascript noremap <buffer>  <c-f> :call JsBeautify()<cr>
+" for json
+autocmd FileType json noremap <buffer> <c-f> :call JsonBeautify()<cr>
+" for jsx
+autocmd FileType jsx noremap <buffer> <c-f> :call JsxBeautify()<cr>
+" for html
+autocmd FileType html noremap <buffer> <c-f> :call HtmlBeautify()<cr>
+" for css or scss
+autocmd FileType css noremap <buffer> <c-f> :call CSSBeautify()<cr>
+
