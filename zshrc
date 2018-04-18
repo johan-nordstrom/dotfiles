@@ -116,10 +116,14 @@ alias vim='NVIM_TUI_ENABLE_TRUE_COLOR=1 nvim'
 alias cw="cd ~/git/casinowilds"
 alias cdcj="cd ~/git/locojoker"
 alias cj="cd ~/git/locojoker"
+alias cb="cd ~/git/betify"
 alias cwr="cd ~/git/winnerResort"
+alias cs="cd ~/git/slotchamp"
+alias cf="cd ~/git/frontend"
 export HOMEBREW_CASK_OPTS="--appdir=~/Applications --fontdir=/Library/Fonts"
 alias chromekiller="pkill Google Chrome"
 alias dangerchrome="open -a 'Google Chrome.app' --args --disable-web-security --allow-running-insecure-content --user-data-dir=''"
 
 # Specify your defaults in this environment variable
 export HOMEBREW_CASK_OPTS="--appdir=/Applications --fontdir=/Library/Fonts"
+defaults write NSGlobalDomain KeyRepeat -int 0.02 

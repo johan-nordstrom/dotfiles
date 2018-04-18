@@ -11,6 +11,8 @@ call dein#add('Shougo/dein.vim')
 call dein#add('adelarsq/vim-matchit')
 call dein#add('digitaltoad/vim-pug')
 
+call dein#add('prettier/vim-prettier',{ 'build': 'yarn install' })
+
 "call dein#add('jremmen/vim-ripgrep')
 
 call dein#add('majutsushi/tagbar')
