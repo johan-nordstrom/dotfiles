@@ -7,9 +7,22 @@ endif
 set runtimepath+=$HOME/.vim/dein/repos/github.com/Shougo/dein.vim
 
 call dein#begin('$HOME/.vim/dein')
+call dein#add('Shougo/deoplete.nvim')
+if !has('nvim')
+  call dein#add('roxma/nvim-yarp')
+  call dein#add('roxma/vim-hug-neovim-rpc')
+endif
+let g:deoplete#enable_at_startup = 1
 call dein#add('Shougo/dein.vim')
 call dein#add('adelarsq/vim-matchit')
 call dein#add('digitaltoad/vim-pug')
+call dein#add('prettier/vim-prettier', { 'build': 'yarn install' })
+
+call dein#add('w0rp/ale')
+
+call dein#add('mxw/vim-jsx')
+call dein#add('fourcube/unused')
+call dein#add('MaxMEllon/vim-jsx-pretty')
 
 call dein#add('prettier/vim-prettier',{ 'build': 'yarn install' })
 
@@ -20,7 +33,9 @@ call dein#add('majutsushi/tagbar')
 call dein#add('tmux-plugins/vim-tmux')
 call dein#add('erikw/tmux-powerline')
 
+call dein#add('davidyorr/vim-es6-unused-imports')
 call dein#add('scrooloose/nerdcommenter')
+call dein#add('isRuslan/vim-es6')
 
 " Find/Search
 call dein#add('rking/ag.vim')
@@ -60,8 +75,6 @@ call dein#add('scrooloose/nerdtree')
 call dein#add('scrooloose/nerdcommenter')
 call dein#add('tpope/vim-fugitive')
 call dein#add('maksimr/vim-jsbeautify')
-"call dein#add('vim-syntastic/syntastic')
-call dein#add('w0rp/ale')
 call dein#add('mattn/emmet-vim')
 "call dein#add('docunext/closetag.vim')
 call dein#add('gregsexton/matchtag')
@@ -105,7 +118,6 @@ set shell=/bin/zsh
 set autoindent
 set expandtab
 set tabstop=2 " a n-space tab width
-set smarttab
 set shiftwidth=2 " allows the use of < and > for VISUAL indenting
 set softtabstop=2 " counts n spaces when DELETE or BCKSPCE is used
 set nobackup " dont keep backups after close
@@ -277,4 +289,10 @@ autocmd FileType jsx noremap <buffer> <c-f> :call JsxBeautify()<cr>
 autocmd FileType html noremap <buffer> <c-f> :call HtmlBeautify()<cr>
 " for css or scss
 autocmd FileType css noremap <buffer> <c-f> :call CSSBeautify()<cr>
+autocmd FileType jsx vnoremap <buffer> <c-f> :call RangeJsxBeautify()<cr>
 
+autocmd BufWinEnter *.js execute "ES6ImportsHighlight"
+autocmd BufWinEnter *.jsx execute "ES6ImportsHighlight"
+autocmd BufWritePost *.js execute "ES6ImportsHighlight"
+autocmd BufWritePost *.jsx execute "ES6ImportsHighlight"
+nnoremap <leader>ji :w<CR>:call clearmatches()<CR>:let cmd = system('unused -v true ' . expand('%'))<CR>:exec cmd<CR>

@@ -127,3 +127,15 @@ alias dangerchrome="open -a 'Google Chrome.app' --args --disable-web-security --
 # Specify your defaults in this environment variable
 export HOMEBREW_CASK_OPTS="--appdir=/Applications --fontdir=/Library/Fonts"
 defaults write NSGlobalDomain KeyRepeat -int 0.02 
+autoload -Uz compinit 
+if [[ -n ${ZDOTDIR}/.zcompdump(#qN.mh+24) ]]; then
+	compinit;
+else
+	compinit -C;
+fi;
+DISABLE_UNTRACKED_FILES_DIRTY="true"
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
+#export FZF_DEFAULT_COMMAND='ag --nocolor --ignore node_modules -g ""'
+export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
